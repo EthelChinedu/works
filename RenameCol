@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 18:52:23 2017
+
+@author: ethels
+"""
+
+import pandas as pd
+from pandas import Series
+from matplotlib import pyplot
+shear_df = pd.read_csv('shear1.csv', header=0)
+#print(shear_df.columns)
+#print(shear_df.dtypes)
+print(shear_df.Time.str.slice(-5, -3).astype(int).head())
+#shear_df.SD49.float.astype(int)
+shear_df['Time'] = pd.to_datetime(shear_df.Time)
+shear_df['SD49'] = pd.Index(shear_df.SD49)
+print(shear_df.dtypes)
+

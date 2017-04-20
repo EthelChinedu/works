@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 19:40:53 2017
+
+@author: ethels
+"""
+
+import pandas as pd
+ufo = pd.read_csv('http://bit.ly/uforeports')
+print(ufo.head())
+#ufo.rename(columns = {'Colors Report':'Color_Rep','Shape Reported':'Shape_Re'}, inplace=True)
+#ufo_cols = ['City', 'Colors Reported', 'Shape_Re', 'State', 'Time']
+#ufo.columns = ufo.columns.str.replace('','_')
+print(ufo.columns)
+print(ufo.isnull().tail())
+print(ufo.isnull().sum())
+print(ufo[ufo.City.isnull()])
+print(ufo.shape)
+print(ufo.dropna(how='any').shape)
+print(ufo.dropna(how='all').shape) # is goin to make any changes bc some rows diont have missing values like the state and time
+print(ufo.dropna(subset=['City', 'Shape Reported'], how='all').shape)
+print(ufo['Shape Reported'].fillna(value='Various', inplace=True))
+print(ufo['Shape Reported'].value_counts())
+from keras.models import Sequential

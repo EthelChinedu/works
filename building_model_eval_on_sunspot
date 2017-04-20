@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar 31 21:19:03 2017
+
+@author: ethels
+"""
+from pandas import Series
+from matplotlib import pyplot
+series = Series.from_csv('sunspots.csv', header=0)
+X = series.values
+train_size = int(len(X) * 0.66)
+train, test = X[0:train_size], X[train_size:len(X)]
+print('Obs: %d' % (len(X)))
+print('Training Obs: %d' % (len(train)))
+print('Testing Obs: %d' % (len(test)))
+print(series.decribe())
+#print(series.tail(10
+pyplot.plot(train)
+pyplot.plot([None for i in train] + [x for x in test])
+pyplot.show()

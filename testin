@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 13:43:27 2017
+
+@author: ethels
+"""
+
+
+import pandas as pd
+from pandas import read_csv
+from pandas import datetime
+from matplotlib import pyplot
+series = read_csv('Benson_OxfordHrly 1_1_2012-1_1_2015A.csv', header=0)
+series[NaN=0]
+print(series.head(10))

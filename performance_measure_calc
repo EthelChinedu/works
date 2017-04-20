@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 25 09:30:54 2017
+
+@author: ethels
+"""
+
+#Prediction of performance measures
+#calc forecast error
+#expected = [0.0, .05, 0.0, 0.5, 0.0]
+#predicted = [0.2, 0.4, 0.1, 0.6, 0.2]
+#for_err = [expected[i] - predicted[i] for i in range(len(expected))]
+#print('forcast_errors: %s' %for_err)
+
+#cal mean forcast error
+#expected = [0.0, .05, 0.0, 0.5, 0.0]
+#predicted = [0.2, 0.4, 0.1, 0.6, 0.2]
+#for_err = [expected[i] - predicted[i] for i in range(len(expected))]
+#bias = sum(for_err) * 1.0/len(expected)
+#mae = abs(bias)
+#print('MAE: %s' %mae)
+
+#cal.MAE from scikit-learn
+#from sklearn.metrics import mean_absolute_error
+#expected = [0.0, 0.05, 0.0, 0.5, 0.0]
+#predicted = [0.2, 0.4, 0.1, 0.6, 0.2]
+#mae = mean_absolute_error(expected, predicted)
+#print('MAE: %f' %mae)
+
+#cal MSE 
+from sklearn.metrics import mean_squared_error
+from math import sqrt
+expected = [0.0, 0.05, 0.0, 0.5, 0.0]
+predicted = [0.2, 0.4, 0.1, 0.6, 0.2]
+mse = mean_squared_error(expected, predicted)
+rmse = sqrt(mse)
+print('RMSE: %f' %rmse)
+

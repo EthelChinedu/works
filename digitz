@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 15:38:15 2017
+
+@author: ethels
+"""
+
+# Import the `pandas` library as `pd`
+import pandas as pd
+
+# Load in the data with `read_csv()`
+digits = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/optdigits/optdigits.tra",
+                     header=None)
+
+# Print out `digits`
+print(digits.head(10))

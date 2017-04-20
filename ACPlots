@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Apr  5 11:25:49 2017
+
+@author: ethels
+"""
+from pandas import Series
+import pandas as pd
+from matplotlib import pyplot
+from statsmodels.graphics.tsaplots import plot_acf
+shear_df = pd.read_csv('shear1.csv', header=0)
+shear = shear_df[['Date', 'SD49']]
+print(shear_df.head())
+#series = pd.Series(shear)
+#print(series.head(10))
+#print(MWwind.isnull())
+#print(MWwind.isnull().sum())
+#print(MWwind[MWwind.Date.SD49.isnull()])
+#plot_acf(series)
+#pyplot.show()

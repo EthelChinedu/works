@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 18:02:31 2017
+
+@author: ethels
+"""
+from pandas import datetime
+from pandas import read_csv
+from pandas.tools.plotting import autocorrelation_plot
+shear = read_csv('shearSD.csv', header=0)
+print(shear.head())
+print(shear.dtypes)
+
+#utocorrelation_plot(shear)

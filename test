@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 14:31:43 2017
+
+@author: ethels
+"""
+
+import pandas as pd
+from pandas import Series
+from matplotlib import pyplot
+dateparse = lambda x: pd.datetime.strptime(x, '%Y-%m-d% %H:%M:%S')
+series = pd.read_csv('shear1.csv', parse_dates={'datetime': ['Date', 'Time']}, date_parser=dateparse)
+print(series.head(4))
+#shear_df = pd.read_csv('shear1.csv', parse_dates=True)#', header=0)
+#names = (['H49', 'H39', 'H30', 'H10', 'Mean49', 'SD49', 'Max49', 'Min49', 'Mean39', 
+#       'SD39', 'MeanWD', 'SDWD', 'MaxWD', 'MinWD', 'MeanTemp', 'SDTemp', 'MaxTemp',
+#      'MinTemp', 'Date', 'Time'])
+#MeanWindsp = shear_df[['Date', 'Mean49', 'Max49', 'Min49', 'SD49']]
+#MeanWindsp2 = shear_df[['Date', 'Mean39', 'Min39', 'SD39']]
+#PlotSD49_39 = shear_df[['Date', 'SD49', 'SD39']]
+#print(shear_df.tail(9))
+#MeanWindsp.plot()
+#MeanWindsp2.plot()
+#PlotSD49_39.plot()
+#pyplot.show()
+##autocorrelation_plot(MeanWindsp)
+#print(shear_df.size)
+

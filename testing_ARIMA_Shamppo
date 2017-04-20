@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  4 11:01:31 2017
+
+@author: ethels
+"""
+#Load and plot dataset
+from pandas import read_csv
+from pandas import datetime
+from pandas import DataFrame
+from statsmodels.tsa.arima_model import ARIMA
+from matplotlib import pyplot
+from pandas.tools.plotting import autocorrelation_plot
+#Load dataset
+def parser(x):
+    return datetime.strptime('201'+x, '%Y-%m')
+series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0,
+                  squeeze=True, date_parser=parser)
+#autocorrelation_plot
+autocorrelation_plot(series)
+#fit model
+model = ARIMA(series, order=(5,1,0))
+model_fit = model.fit(disp=0)
+#Do summery of the fit model
+print(model_fit.summary())
+residuals = DataFrame(model_fit.resid)
+residuals.plot()
+residuals.plot(kind='kde')
+pyplot.show()
+print(residuals.describe())
+
+
+
+
